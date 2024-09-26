@@ -9,12 +9,23 @@
 #define SS_PIN 4    // SDA (D2)
 #define RST_PIN 5   // RST (D1)
 
+
+// Lien de l'API
+String _serveur = "api.workshop-b3.enzo-palermo.com:3000";
+String _api = "/locker/islockerbooked/";
+String _rfidId;
+
 // Pin des leds et transistor
 #define TRANSISTOR_PIN D0
 #define GREEN_LED_PIN D3
 #define LED_BUILTIN D4
 #define RED_LED_PIN D8
+int getLockerId(String _serveur, String _api, String _rfidId);
+String removeSpaces(const String &input);
+String getContentType(String path);
 void lectureRFID();
+int getLockerIdFromJson(String jsonString);
+
 // Instance de l'objet RFID
 MFRC522 rfid(SS_PIN, RST_PIN);
 
@@ -57,6 +68,59 @@ void loop() {
     lectureRFID();
 }
 
+// fonction qui tape l'API
+int getLockerId(String _serveur, String _api, String _rfidId) {
+    // Envoie de la requete
+    String url = "http://" + _serveur + _api + _rfidId;
+    http.begin(client, url);
+    int httpCode = http.GET();
+
+    // Ecrire la réponse
+    Serial.println("url : " + url);
+    Serial.println(http.getString());
+
+    // Ecrire l'état de la requete (pour le debug)
+    Serial.println("[HTTP] GET... : " + http.errorToString(httpCode));
+
+    // Extraction de json et récupération du numéro du casier puis, affichage
+    int id = getLockerIdFromJson(http.getString());
+    Serial.println(id);
+
+    // Déconnexion
+    http.end();
+    return id;
+}
+
+// Fonction qui retire les espace pour passer le numéro de la carte à l'API
+String removeSpaces(const String &input) {
+    String result;
+    for (char c : input) {
+        if (c != ' ') {
+            result += c;
+        }
+    }
+    return result;
+}
+
+// Transforme en Json le retour de l'API et retourne le numéro du casier
+int getLockerIdFromJson(String jsonString) {
+    // Créer un document JSON
+    StaticJsonDocument<200> doc;
+
+    // Parser la chaîne JSON
+    DeserializationError error = deserializeJson(doc, jsonString);
+
+    // Vérifier s'il y a une erreur dans le parsing
+    if (error) {
+        Serial.print("Erreur lors de la désérialisation: ");
+        Serial.println(error.f_str());
+        return -1;
+    }
+
+    // Extraire la valeur associée à la clé "lockerId"
+    int lockerId = doc["lockerId"];
+
+    return lockerId;
 }
 // Lecture de la carte RFID et gestion de l'ouverture du casier
 void lectureRFID() {
@@ -79,7 +143,20 @@ void lectureRFID() {
             // Arrête la communication avec la carte
             rfid.PICC_HaltA();
 
+            int lockerId = getLockerId(_serveur, _api, removeSpaces(idRfid));
+            Serial.println("Résultat de la fct getLockerId" + lockerId);
 
+            if (lockerId > 0) {
+                digitalWrite(TRANSISTOR_PIN, HIGH);
+                digitalWrite(GREEN_LED_PIN, HIGH);
+                delay(1000);
+                digitalWrite(TRANSISTOR_PIN, LOW);
+                digitalWrite(GREEN_LED_PIN, LOW);
+            } else {
+                digitalWrite(RED_LED_PIN, HIGH);
+                delay(1000);
+                digitalWrite(RED_LED_PIN, LOW);
+            }
         }
     }
 }
