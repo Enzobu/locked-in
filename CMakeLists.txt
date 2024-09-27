@@ -1,0 +1,195 @@
+cmake_minimum_required(VERSION 3.29)
+project(IOT)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(locked-in/.pio)
+include_directories(locked-in/.pio/libdeps)
+include_directories(locked-in/.pio/libdeps/esp12e)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/examples)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/JsonConfigFile)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/JsonFilterExample)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/JsonGeneratorExample)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/JsonHttpClient)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/JsonParserExample)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/JsonServer)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/JsonUdpBeacon)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/MsgPackParser)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/ProgmemExample)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/StringExample)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Array)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Collection)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Deserialization)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Deserialization/Readers)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Document)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Json)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Memory)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Misc)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/MsgPack)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Numbers)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Object)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/mpl)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Serialization)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Serialization/Writers)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Strings)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Strings/Adapters)
+include_directories(locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant)
+
+add_executable(IOT
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/JsonConfigFile/JsonConfigFile.ino
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/JsonFilterExample/JsonFilterExample.ino
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/JsonGeneratorExample/JsonGeneratorExample.ino
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/JsonHttpClient/JsonHttpClient.ino
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/JsonParserExample/JsonParserExample.ino
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/JsonServer/JsonServer.ino
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/JsonUdpBeacon/JsonUdpBeacon.ino
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/MsgPackParser/MsgPackParser.ino
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/ProgmemExample/ProgmemExample.ino
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/examples/StringExample/StringExample.ino
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Array/ArrayData.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Array/ArrayImpl.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Array/ElementProxy.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Array/JsonArray.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Array/JsonArrayConst.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Array/JsonArrayIterator.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Array/Utilities.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Collection/CollectionData.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Collection/CollectionImpl.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Deserialization/Readers/ArduinoStreamReader.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Deserialization/Readers/ArduinoStringReader.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Deserialization/Readers/FlashReader.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Deserialization/Readers/IteratorReader.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Deserialization/Readers/RamReader.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Deserialization/Readers/StdStreamReader.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Deserialization/Readers/VariantReader.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Deserialization/DeserializationError.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Deserialization/DeserializationOptions.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Deserialization/deserialize.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Deserialization/Filter.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Deserialization/NestingLimit.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Deserialization/Reader.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Document/JsonDocument.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Json/EscapeSequence.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Json/JsonDeserializer.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Json/JsonSerializer.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Json/Latch.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Json/PrettyJsonSerializer.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Json/Utf16.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Json/Utf8.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Memory/Alignment.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Memory/Allocator.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Memory/MemoryPool.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Memory/MemoryPoolList.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Memory/ResourceManager.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Memory/ResourceManagerImpl.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Memory/StringBuffer.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Memory/StringBuilder.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Memory/StringNode.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Memory/StringPool.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Misc/SerializedValue.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/MsgPack/endianness.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/MsgPack/ieee754.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/MsgPack/MsgPackBinary.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/MsgPack/MsgPackDeserializer.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/MsgPack/MsgPackExtension.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/MsgPack/MsgPackSerializer.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Numbers/arithmeticCompare.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Numbers/convertNumber.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Numbers/FloatParts.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Numbers/FloatTraits.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Numbers/JsonFloat.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Numbers/JsonInteger.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Numbers/parseNumber.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Object/JsonObject.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Object/JsonObjectConst.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Object/JsonObjectIterator.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Object/JsonPair.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Object/MemberProxy.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Object/ObjectData.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Object/ObjectImpl.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/mpl/max.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/conditional.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/declval.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/enable_if.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/function_traits.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/integral_constant.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_array.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_base_of.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_class.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_const.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_convertible.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_enum.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_floating_point.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_integral.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_pointer.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_same.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_signed.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_unsigned.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/make_unsigned.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/remove_const.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/remove_cv.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/remove_reference.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/type_identity.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/void_t.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/alias_cast.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/assert.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/attributes.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/ctype.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/integer.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/limits.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/math.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/pgmspace.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/pgmspace_generic.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/preprocessor.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/type_traits.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Polyfills/utility.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Serialization/Writers/ArduinoStringWriter.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Serialization/Writers/DummyWriter.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Serialization/Writers/PrintWriter.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Serialization/Writers/StaticStringWriter.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Serialization/Writers/StdStreamWriter.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Serialization/Writers/StdStringWriter.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Serialization/CountingDecorator.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Serialization/measure.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Serialization/serialize.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Serialization/Writer.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Strings/Adapters/FlashString.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Strings/Adapters/JsonString.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Strings/Adapters/RamString.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Strings/Adapters/StringObject.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Strings/IsString.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Strings/JsonString.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Strings/StringAdapter.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Strings/StringAdapters.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Strings/StringTraits.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/Converter.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/ConverterImpl.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/JsonVariant.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/JsonVariantConst.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/JsonVariantCopier.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/JsonVariantVisitor.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/VariantAttorney.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/VariantCompare.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/VariantContent.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/VariantData.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/VariantDataVisitor.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/VariantImpl.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/VariantOperators.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/VariantRefBase.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/VariantRefBaseImpl.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/VariantTag.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Variant/VariantTo.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/compatibility.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Configuration.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/Namespace.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson/version.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson.h
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/src/ArduinoJson.hpp
+    locked-in/.pio/libdeps/esp12e/ArduinoJson/ArduinoJson.h
+    locked-in/src/main.cpp)

@@ -1,3 +1,4 @@
 .pio
 /data
 /.idea
+/cmake-build-debug
